@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx46ce6nr3q4l"]
+
+[ext_resource type="PackedScene" uid="uid://dulsyswsfhluu" path="res://player_character.tscn" id="1_w3snd"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_w3snd"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.40884, 4.76837e-07, 0.0300007)
+use_collision = true
+size = Vector3(33.842, 0.1, 25)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.14496, 0, 5.84272)
+operation = 2
+size = Vector3(4, 1, 9.467)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0121832, 1.76153, -2.97)
+use_collision = true
+size = Vector3(1, 3.5, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.00996, 0.926886, 6.02913)
+use_collision = true
+size = Vector3(1, 1.75, 1)
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_w3snd")]
+transform = Transform3D(0.999424, 0, 0, 0, 0.999424, 0, 0, 0, 0.999424, 0.130046, 2.38419e-07, 5.72439)
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(18.6004, 8.10606, 0, -8.5765, 17.5803, 0, 0, 0, 3.44446, 12.9855, 0.249415, -9.1865)
+use_collision = true
+mesh = SubResource("PrismMesh_w3snd")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="."]
+transform = Transform3D(16.7433, 11.1509, 0, -11.798, 15.8251, 0, 0, 0, 3.44446, 11.7, -1.69618, -5.27929)
+use_collision = true
+mesh = SubResource("PrismMesh_w3snd")

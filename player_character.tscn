@@ -1,0 +1,53 @@
+[gd_scene load_steps=11 format=3 uid="uid://dulsyswsfhluu"]
+
+[ext_resource type="Script" uid="uid://bap56p5a7bdk0" path="res://player_character.gd" id="1_02ohv"]
+[ext_resource type="Script" uid="uid://djujwtwl3t2j8" path="res://state_machine.gd" id="2_5up26"]
+[ext_resource type="Script" uid="uid://ddrytxdf5vwim" path="res://idle.gd" id="3_6qc1w"]
+[ext_resource type="Script" uid="uid://bk5ea0lg23j5s" path="res://fall.gd" id="4_uuvki"]
+[ext_resource type="Script" uid="uid://b3p4yggsty8jh" path="res://jump.gd" id="5_04jrr"]
+[ext_resource type="Script" uid="uid://ctwdpjiov1tyi" path="res://walk.gd" id="6_uuvki"]
+[ext_resource type="Script" uid="uid://biryieqpd83xb" path="res://run.gd" id="7_04jrr"]
+[ext_resource type="Script" uid="uid://cv13vsi5apygf" path="res://strafe.gd" id="8_4yf86"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5up26"]
+height = 1.75
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_4akcp"]
+height = 1.75
+
+[node name="Character" type="CharacterBody3D"]
+script = ExtResource("1_02ohv")
+
+[node name="CharacterCollision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.875, 0)
+shape = SubResource("CapsuleShape3D_5up26")
+
+[node name="CharacterMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.875, 0)
+mesh = SubResource("CapsuleMesh_4akcp")
+
+[node name="CharacterCamera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.942746, 0.333511, 0, -0.333511, 0.942746, 0, 2.69704, 2.54174)
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state", "character")]
+script = ExtResource("2_5up26")
+initial_state = NodePath("Idle")
+character = NodePath("..")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("3_6qc1w")
+
+[node name="Fall" type="Node" parent="StateMachine"]
+script = ExtResource("4_uuvki")
+
+[node name="Jump" type="Node" parent="StateMachine"]
+script = ExtResource("5_04jrr")
+
+[node name="Walk" type="Node" parent="StateMachine"]
+script = ExtResource("6_uuvki")
+
+[node name="Run" type="Node" parent="StateMachine"]
+script = ExtResource("7_04jrr")
+
+[node name="Strafe" type="Node" parent="StateMachine"]
+script = ExtResource("8_4yf86")
