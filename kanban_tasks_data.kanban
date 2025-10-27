@@ -1,0 +1,296 @@
+{
+	"categories": [
+		{
+			"uuid": "1ea6fd74-bcb5-47ad-acca-507655fdb2bc",
+			"title": "UI",
+			"color": "70fa7e"
+		},
+		{
+			"uuid": "ed304c8a-714c-4436-a4a4-1d9d1f1b42cb",
+			"title": "3D",
+			"color": "c6635e"
+		},
+		{
+			"uuid": "5184c9ae-03d5-4b0a-b429-6ec7c4194f73",
+			"title": "NPC",
+			"color": "ca4bc2"
+		},
+		{
+			"uuid": "5a5fee0d-522a-4a79-be78-0ae1d78ccee3",
+			"title": "System",
+			"color": "282be0"
+		},
+		{
+			"uuid": "7ec74847-4538-4c88-b41c-3cdfd0a896ac",
+			"title": "Mechanic",
+			"color": "c8d75a"
+		}
+	],
+	"stages": [
+		{
+			"uuid": "0e698937-f431-4dd1-a646-f33dcb17748c",
+			"title": "Todo - Art",
+			"tasks": [
+				"e5f97832-2353-407c-b91f-0e55cc2e5273",
+				"898e3650-fe11-4dab-8de5-082adf578671",
+				"e56d7d33-771f-4bc3-a110-c19b131665c8",
+				"a64c226c-9747-4745-b795-44aeee577936",
+				"84f73b4a-9536-4cc5-9c15-815a7a4cf3bc"
+			]
+		},
+		{
+			"uuid": "ebbfc961-ca73-4af0-9559-10b084cee996",
+			"title": "Todo - Programming",
+			"tasks": [
+				"c2d73cd7-70b4-48d4-8a21-2ee6ec769973",
+				"e0ef437f-978b-40eb-99d5-cff8562c25f5",
+				"cb813ef2-cd8d-43cf-94af-779e7b1edc97"
+			]
+		},
+		{
+			"uuid": "7195bd20-54df-4ea9-b901-3b6260d7f621",
+			"title": "Doing",
+			"tasks": []
+		},
+		{
+			"uuid": "5ac73f03-4eeb-4d55-9f15-834c23518711",
+			"title": "Done",
+			"tasks": [
+				"84a4ee22-5d87-44e4-bd84-feda9619b7f1",
+				"8db4b53f-58f4-4b32-8f1a-ed34bf6495ab",
+				"aa50801a-6d69-46d3-ae50-e84c239c3c5f",
+				"b7042ce1-c2b2-49f4-a6c1-a1c9a6a8a2ed",
+				"15419d70-79d0-47a2-ac3f-cd4ec15a62d8"
+			]
+		}
+	],
+	"tasks": [
+		{
+			"uuid": "b7042ce1-c2b2-49f4-a6c1-a1c9a6a8a2ed",
+			"title": "Hipfire Targeting Reticle",
+			"description": "",
+			"category": "5a5fee0d-522a-4a79-be78-0ae1d78ccee3",
+			"steps": []
+		},
+		{
+			"uuid": "aa50801a-6d69-46d3-ae50-e84c239c3c5f",
+			"title": "Aim Targeting Reticle",
+			"description": "",
+			"category": "5a5fee0d-522a-4a79-be78-0ae1d78ccee3",
+			"steps": []
+		},
+		{
+			"uuid": "84a4ee22-5d87-44e4-bd84-feda9619b7f1",
+			"title": "Target Dummy",
+			"description": "",
+			"category": "1ea6fd74-bcb5-47ad-acca-507655fdb2bc",
+			"steps": [
+				{
+					"details": "Mesh",
+					"done": true
+				},
+				{
+					"details": "Rotation on Interact",
+					"done": true
+				},
+				{
+					"details": "Rotation direction based on which area was hit",
+					"done": true
+				}
+			]
+		},
+		{
+			"uuid": "8db4b53f-58f4-4b32-8f1a-ed34bf6495ab",
+			"title": "Magic",
+			"description": "",
+			"category": "7ec74847-4538-4c88-b41c-3cdfd0a896ac",
+			"steps": [
+				{
+					"details": "State for Magic",
+					"done": true
+				},
+				{
+					"details": "Fire Beam Scene with orange cylinder",
+					"done": true
+				},
+				{
+					"details": "short animation",
+					"done": true
+				}
+			]
+		},
+		{
+			"uuid": "e0ef437f-978b-40eb-99d5-cff8562c25f5",
+			"title": "NPC",
+			"description": "",
+			"category": "5184c9ae-03d5-4b0a-b429-6ec7c4194f73",
+			"steps": [
+				{
+					"details": "Movement - Walk",
+					"done": false
+				},
+				{
+					"details": "Movement - Teleport",
+					"done": false
+				},
+				{
+					"details": "Interact",
+					"done": false
+				},
+				{
+					"details": "Disable player movement",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "c2d73cd7-70b4-48d4-8a21-2ee6ec769973",
+			"title": "Quest",
+			"description": "",
+			"category": "5a5fee0d-522a-4a79-be78-0ae1d78ccee3",
+			"steps": [
+				{
+					"details": "Create Single step quest",
+					"done": false
+				},
+				{
+					"details": "Create multi-step quest",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "15419d70-79d0-47a2-ac3f-cd4ec15a62d8",
+			"title": "Textboxes",
+			"description": "",
+			"category": "1ea6fd74-bcb5-47ad-acca-507655fdb2bc",
+			"steps": [
+				{
+					"details": "Show text",
+					"done": true
+				},
+				{
+					"details": "Show Background",
+					"done": true
+				},
+				{
+					"details": "Create textbox function",
+					"done": true
+				}
+			]
+		},
+		{
+			"uuid": "cb813ef2-cd8d-43cf-94af-779e7b1edc97",
+			"title": "Level Transition",
+			"description": "",
+			"category": "5a5fee0d-522a-4a79-be78-0ae1d78ccee3",
+			"steps": [
+				{
+					"details": "Detect player in Area",
+					"done": false
+				},
+				{
+					"details": "Move Between Two Scenes",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "898e3650-fe11-4dab-8de5-082adf578671",
+			"title": "Mesh - Bridges",
+			"description": "",
+			"category": "ed304c8a-714c-4436-a4a4-1d9d1f1b42cb",
+			"steps": []
+		},
+		{
+			"uuid": "a64c226c-9747-4745-b795-44aeee577936",
+			"title": "Mesh - Sundial",
+			"description": "",
+			"category": "ed304c8a-714c-4436-a4a4-1d9d1f1b42cb",
+			"steps": []
+		},
+		{
+			"uuid": "e56d7d33-771f-4bc3-a110-c19b131665c8",
+			"title": "Mesh - Items",
+			"description": "",
+			"category": "ed304c8a-714c-4436-a4a4-1d9d1f1b42cb",
+			"steps": [
+				{
+					"details": "Health Nut",
+					"done": false
+				},
+				{
+					"details": "Green Grass",
+					"done": false
+				},
+				{
+					"details": "Blue Bolt",
+					"done": false
+				},
+				{
+					"details": "Fire Magic",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "e5f97832-2353-407c-b91f-0e55cc2e5273",
+			"title": "Map - Gogouds Manor",
+			"description": "No Manor Internals, Only places the player can walk needs to be modeled, including walls.",
+			"category": "ed304c8a-714c-4436-a4a4-1d9d1f1b42cb",
+			"steps": []
+		},
+		{
+			"uuid": "84f73b4a-9536-4cc5-9c15-815a7a4cf3bc",
+			"title": "BONUS MESHES",
+			"description": "",
+			"category": "ed304c8a-714c-4436-a4a4-1d9d1f1b42cb",
+			"steps": [
+				{
+					"details": "Hype",
+					"done": false
+				},
+				{
+					"details": "Sword of Peace",
+					"done": false
+				},
+				{
+					"details": "Crossbow",
+					"done": false
+				},
+				{
+					"details": "Door",
+					"done": false
+				},
+				{
+					"details": "Lock",
+					"done": false
+				},
+				{
+					"details": "Button",
+					"done": false
+				},
+				{
+					"details": "Gate",
+					"done": false
+				}
+			]
+		}
+	],
+	"layout": {
+		"columns": [
+			[
+				"0e698937-f431-4dd1-a646-f33dcb17748c"
+			],
+			[
+				"ebbfc961-ca73-4af0-9559-10b084cee996"
+			],
+			[
+				"7195bd20-54df-4ea9-b901-3b6260d7f621"
+			],
+			[
+				"5ac73f03-4eeb-4d55-9f15-834c23518711"
+			]
+		]
+	}
+}

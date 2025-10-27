@@ -1,0 +1,253 @@
+[gd_scene load_steps=32 format=3 uid="uid://dulsyswsfhluu"]
+
+[ext_resource type="Script" uid="uid://bap56p5a7bdk0" path="res://scripts/entities/player_character.gd" id="1_02ohv"]
+[ext_resource type="Script" uid="uid://djujwtwl3t2j8" path="res://globals/states/state_machine.gd" id="2_5up26"]
+[ext_resource type="Script" uid="uid://ddrytxdf5vwim" path="res://globals/states/idle.gd" id="3_6qc1w"]
+[ext_resource type="PackedScene" uid="uid://h2jng10yea01" path="res://scenes/entities/crossbow.tscn" id="3_he2na"]
+[ext_resource type="Texture2D" uid="uid://djta1ix4y28xg" path="res://assets/hype_targeting_reticle.png" id="4_1p3yf"]
+[ext_resource type="Script" uid="uid://byq7n0hdwlcuo" path="res://scripts/entities/crossbow_aim.gd" id="4_qhxie"]
+[ext_resource type="Script" uid="uid://bk5ea0lg23j5s" path="res://globals/states/fall.gd" id="4_uuvki"]
+[ext_resource type="Script" uid="uid://b3p4yggsty8jh" path="res://globals/states/jump.gd" id="5_04jrr"]
+[ext_resource type="Texture2D" uid="uid://dcu6q3g1uv7hb" path="res://assets/hype_targeting_reticle_emission.png" id="6_dqq0f"]
+[ext_resource type="Script" uid="uid://ctwdpjiov1tyi" path="res://globals/states/walk.gd" id="6_uuvki"]
+[ext_resource type="Script" uid="uid://biryieqpd83xb" path="res://globals/states/run.gd" id="7_04jrr"]
+[ext_resource type="Script" uid="uid://cv13vsi5apygf" path="res://globals/states/strafe.gd" id="8_4yf86"]
+[ext_resource type="PackedScene" uid="uid://l0b2pw11e46k" path="res://scenes/entities/sword.tscn" id="9_8bl0p"]
+[ext_resource type="Script" uid="uid://cb1pxn1ui6t6j" path="res://globals/states/combat_sate_machine.gd" id="11_bgme8"]
+[ext_resource type="Script" uid="uid://dedjhtg4h4mec" path="res://globals/states/neutral.gd" id="11_p3c78"]
+[ext_resource type="Script" uid="uid://cd50ykqwrn2wt" path="res://globals/states/combat.gd" id="12_eh3ko"]
+[ext_resource type="Script" uid="uid://6xu6n6sjut0a" path="res://globals/states/normal_attack.gd" id="14_g1g7m"]
+[ext_resource type="Script" uid="uid://dxbyt41txnd5d" path="res://globals/states/aim.gd" id="15_pi6eu"]
+[ext_resource type="Script" uid="uid://bv0wv81sld1u8" path="res://globals/states/aim_attack.gd" id="16_ha3ud"]
+[ext_resource type="Script" uid="uid://chrcrvk5d3ohm" path="res://globals/states/magic_attack.gd" id="17_us3k5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5up26"]
+height = 1.75
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4yf86"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_4akcp"]
+material = SubResource("StandardMaterial3D_4yf86")
+height = 1.75
+
+[sub_resource type="Animation" id="Animation_qhxie"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterMesh:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.875, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:is_movement_locked")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:target_speed")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [7.0]
+}
+
+[sub_resource type="Animation" id="Animation_1p3yf"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterMesh:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.875, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_us3k5"]
+resource_name = "magic_fire_beam"
+length = 1.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:is_movement_locked")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:target_speed")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4, 0.5, 1.6),
+"transitions": PackedFloat32Array(1, 0.2588165, 0.2588165),
+"update": 0,
+"values": [0.0, 7.0, 0.0]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 1.3333334),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"set_magic_active"
+}, {
+"args": [],
+"method": &"set_magic_active"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dqq0f"]
+_data = {
+&"RESET": SubResource("Animation_qhxie"),
+&"idle": SubResource("Animation_1p3yf"),
+&"magic_fire_beam": SubResource("Animation_us3k5")
+}
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_us3k5"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1p3yf"]
+radius = 0.4
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qhxie"]
+top_radius = 0.4
+bottom_radius = 0.4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dqq0f"]
+albedo_color = Color(0.85490197, 0.38039216, 0.13725491, 1)
+
+[node name="Character" type="CharacterBody3D" node_paths=PackedStringArray("Weapons")]
+script = ExtResource("1_02ohv")
+target_speed = 7.0
+Weapons = [NodePath("Sword"), NodePath("Crossbow")]
+
+[node name="CharacterCollision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.875, 0)
+shape = SubResource("CapsuleShape3D_5up26")
+
+[node name="CharacterMesh" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.875, 0)
+mesh = SubResource("CapsuleMesh_4akcp")
+
+[node name="Sword" parent="." instance=ExtResource("9_8bl0p")]
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999997, 0, 0, 0, 0.9999998, -0.59742117, 1.1447703, -0.0077664256)
+
+[node name="Crossbow" parent="." instance=ExtResource("3_he2na")]
+transform = Transform3D(0.50293213, -0.768571, -0.39542097, 0.21585889, 0.5546824, -0.80357456, 0.8369373, 0.31878838, 0.44487047, 0.623, 1.151, 0.335)
+
+[node name="CrossbowAim" type="RayCast3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.765, 0)
+enabled = false
+target_position = Vector3(0, 0, -100)
+hit_back_faces = false
+script = ExtResource("4_qhxie")
+
+[node name="Decal" type="Decal" parent="CrossbowAim"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+visible = false
+size = Vector3(0.5, 0.5, 0.5)
+texture_albedo = ExtResource("4_1p3yf")
+texture_emission = ExtResource("6_dqq0f")
+emission_energy = 0.6
+
+[node name="CharacterCamera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.942746, 0.333511, 0, -0.333511, 0.942746, 0, 2.7, 2.54)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_dqq0f")
+}
+
+[node name="totallymagictrust" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.75, -1.707)
+visible = false
+physics_material_override = SubResource("PhysicsMaterial_us3k5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="totallymagictrust"]
+shape = SubResource("CylinderShape3D_1p3yf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="totallymagictrust"]
+mesh = SubResource("CylinderMesh_qhxie")
+surface_material_override/0 = SubResource("StandardMaterial3D_dqq0f")
+
+[node name="WalkStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state", "character")]
+unique_name_in_owner = true
+script = ExtResource("2_5up26")
+initial_state = NodePath("Idle")
+character = NodePath("..")
+
+[node name="Idle" type="Node" parent="WalkStateMachine"]
+script = ExtResource("3_6qc1w")
+
+[node name="Strafe" type="Node" parent="WalkStateMachine"]
+script = ExtResource("8_4yf86")
+
+[node name="Walk" type="Node" parent="WalkStateMachine"]
+script = ExtResource("6_uuvki")
+
+[node name="Run" type="Node" parent="WalkStateMachine"]
+script = ExtResource("7_04jrr")
+
+[node name="Jump" type="Node" parent="WalkStateMachine"]
+script = ExtResource("5_04jrr")
+
+[node name="Fall" type="Node" parent="WalkStateMachine"]
+script = ExtResource("4_uuvki")
+
+[node name="CombatStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state", "character")]
+script = ExtResource("11_bgme8")
+initial_state = NodePath("Neutral")
+character = NodePath("..")
+
+[node name="Neutral" type="Node" parent="CombatStateMachine"]
+script = ExtResource("11_p3c78")
+
+[node name="Combat" type="Node" parent="CombatStateMachine"]
+script = ExtResource("12_eh3ko")
+
+[node name="Aim" type="Node" parent="CombatStateMachine"]
+script = ExtResource("15_pi6eu")
+
+[node name="MagicAttack" type="Node" parent="CombatStateMachine"]
+script = ExtResource("17_us3k5")
+
+[node name="NormalAttack" type="Node" parent="CombatStateMachine"]
+script = ExtResource("14_g1g7m")
+
+[node name="AimAttack" type="Node" parent="CombatStateMachine"]
+script = ExtResource("16_ha3ud")

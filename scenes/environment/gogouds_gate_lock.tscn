@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://53418pva6xbl"]
+
+[ext_resource type="Script" uid="uid://dma05d28yjs22" path="res://scripts/environment/gogouds_gate_lock.gd" id="1_mi6dp"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_yvxw1"]
+size = Vector2(0.3, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c8yx6"]
+albedo_color = Color(0.76883984, 0.76450443, 1.1551381e-06, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mi6dp"]
+size = Vector3(1, 1, 0.8432617)
+
+[node name="GogoudsGateLock" type="Area3D"]
+script = ExtResource("1_mi6dp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_yvxw1")
+surface_material_override/0 = SubResource("StandardMaterial3D_c8yx6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.46416932)
+shape = SubResource("BoxShape3D_mi6dp")

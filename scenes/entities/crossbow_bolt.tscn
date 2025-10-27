@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cetdrue3yisgj"]
+
+[ext_resource type="Script" uid="uid://d3a0vmywdk47h" path="res://scripts/entities/weapons/crossbow_bolt.gd" id="1_vsmj6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rwaaf"]
+size = Vector3(0.1, 0.1, 0.82436526)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vsmj6"]
+size = Vector3(0.05, 0.05, 0.4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vsmj6"]
+albedo_color = Color(0.99999994, 0.3415154, 0.20659205, 1)
+
+[node name="CrossbowBolt" type="Area3D"]
+script = ExtResource("1_vsmj6")
+speed = 50.0
+max_range = 60.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.21218264)
+shape = SubResource("BoxShape3D_rwaaf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_vsmj6")
+surface_material_override/0 = SubResource("StandardMaterial3D_vsmj6")

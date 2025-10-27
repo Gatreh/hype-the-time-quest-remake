@@ -1,0 +1,81 @@
+[gd_scene load_steps=10 format=3 uid="uid://ctsl6pb4jpucg"]
+
+[ext_resource type="Script" uid="uid://djnb01ja8kbxb" path="res://scripts/environment/target_dummy.gd" id="1_4bl8k"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_kh7ch"]
+radius = 0.3
+height = 0.6
+
+[sub_resource type="BoxMesh" id="BoxMesh_4bl8k"]
+size = Vector3(2, 0.1, 0.1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_f412p"]
+top_radius = 0.35
+bottom_radius = 0.35
+height = 0.001
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_kh7ch"]
+height = 0.001
+radius = 0.35
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_hn1pl"]
+top_radius = 0.35
+bottom_radius = 0.4
+height = 0.7
+
+[sub_resource type="BoxMesh" id="BoxMesh_kh7ch"]
+size = Vector3(0.1, 1.6, 0.1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4bl8k"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4bl8k"]
+size = Vector3(2.6065674, 0.6390625, 0.09262695)
+
+[node name="TargetDummy" type="StaticBody3D"]
+script = ExtResource("1_4bl8k")
+
+[node name="Head" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+mesh = SubResource("CapsuleMesh_kh7ch")
+
+[node name="Arms" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.93491685, 0)
+mesh = SubResource("BoxMesh_4bl8k")
+
+[node name="LeftTargetMesh" type="MeshInstance3D" parent="Arms"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.95, 0, 0.05)
+mesh = SubResource("CylinderMesh_f412p")
+skeleton = NodePath("../..")
+
+[node name="LeftTarget" type="Area3D" parent="Arms/LeftTargetMesh"]
+unique_name_in_owner = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Arms/LeftTargetMesh/LeftTarget"]
+shape = SubResource("CylinderShape3D_kh7ch")
+
+[node name="RightTargetMesh" type="MeshInstance3D" parent="Arms"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.95, 0, 0.05)
+mesh = SubResource("CylinderMesh_f412p")
+skeleton = NodePath("../..")
+
+[node name="RightTarget" type="Area3D" parent="Arms/RightTargetMesh"]
+unique_name_in_owner = true
+
+[node name="RightTarget" type="CollisionShape3D" parent="Arms/RightTargetMesh/RightTarget"]
+shape = SubResource("CylinderShape3D_kh7ch")
+
+[node name="Body" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+mesh = SubResource("CylinderMesh_hn1pl")
+
+[node name="Pole" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+mesh = SubResource("BoxMesh_kh7ch")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.79840314, 0, 0, 0, 0.79840314, 0, 0, 0, 0.79840314, 0, 0.99303687, 0)
+shape = SubResource("CapsuleShape3D_4bl8k")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0071411133, 0.9446671, -0.0117919855)
+shape = SubResource("BoxShape3D_4bl8k")

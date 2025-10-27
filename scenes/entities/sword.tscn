@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://l0b2pw11e46k"]
+
+[ext_resource type="Script" uid="uid://ff6j6u82yosx" path="res://scripts/entities/weapons/sword.gd" id="1_74bdg"]
+[ext_resource type="PackedScene" uid="uid://q0d3kiq1wmt3" path="res://scenes/entities/sword_projectile.tscn" id="2_n355p"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_o8xsq"]
+size = Vector3(0.05, 0.05, 1.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_74bdg"]
+size = Vector3(0.1, 0.1, 0.01)
+
+[node name="Sword" type="Node3D"]
+script = ExtResource("1_74bdg")
+projectile_scene = ExtResource("2_n355p")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.456)
+mesh = SubResource("BoxMesh_o8xsq")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.056829885)
+mesh = SubResource("BoxMesh_74bdg")

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://d07l6bdtdxga1"]
+
+[ext_resource type="Script" uid="uid://dpexnh30faksn" path="res://data/item.gd" id="1_sodd7"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_sodd7"]
+radius = 0.25
+height = 0.5
+
+[resource]
+script = ExtResource("1_sodd7")
+name = "Blue Bolt"
+type = 1
+mesh = SubResource("CapsuleMesh_sodd7")
+metadata/_custom_type_script = "uid://dpexnh30faksn"

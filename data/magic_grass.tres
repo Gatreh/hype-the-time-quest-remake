@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://c1rn12pobaj4w"]
+
+[ext_resource type="Script" uid="uid://dpexnh30faksn" path="res://data/item.gd" id="1_qgphj"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_qgphj"]
+radius = 0.25
+height = 0.5
+
+[resource]
+script = ExtResource("1_qgphj")
+name = "Magic grass"
+mesh = SubResource("CapsuleMesh_qgphj")
+restore_amount = 10.0
+metadata/_custom_type_script = "uid://dpexnh30faksn"

@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://h2jng10yea01"]
+
+[ext_resource type="Script" uid="uid://n0yhua48xog7" path="res://scripts/entities/weapons/crossbow.gd" id="1_6sny2"]
+[ext_resource type="PackedScene" uid="uid://cetdrue3yisgj" path="res://scenes/entities/crossbow_bolt.tscn" id="2_tmy0e"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_fvfcx"]
+size = Vector3(0.05, 0.1, 0.8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2h8y4"]
+size = Vector3(0.7, 0.1, 0.05)
+
+[node name="Crossbow" type="Node3D"]
+script = ExtResource("1_6sny2")
+projectile_scene = ExtResource("2_tmy0e")
+
+[node name="Stock" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.24420792)
+mesh = SubResource("BoxMesh_fvfcx")
+skeleton = NodePath("../Limb")
+
+[node name="Limb" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5608548)
+mesh = SubResource("BoxMesh_2h8y4")
