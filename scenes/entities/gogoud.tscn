@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cb68ooqljvvi5"]
+
+[ext_resource type="Script" uid="uid://cx43xi5slxt4l" path="res://scripts/entities/gogoud.gd" id="1_epksx"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_3cn0l"]
+height = 1.75
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ivuw8"]
+height = 1.75
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1i6wd"]
+radius = 2.2407396
+
+[node name="Gogoud" type="CharacterBody3D"]
+script = ExtResource("1_epksx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.875, 0)
+mesh = SubResource("CapsuleMesh_3cn0l")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.875, 0)
+shape = SubResource("CapsuleShape3D_ivuw8")
+
+[node name="InteractRange" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractRange"]
+shape = SubResource("SphereShape3D_1i6wd")

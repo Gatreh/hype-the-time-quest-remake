@@ -2,8 +2,13 @@ extends InteractibleObject
 
 
 func _interact() -> void:
-	var requirements = Flags.gogouds_manor
+	var requirements = [
+		Inventory.gogouds_manor_gate_key,
+		Inventory.is_gate_key_equipped,
+		!Flags.is_manor_gate_open,
+	]
+	
 	if _check_requirements(requirements):
-		requirements[requirements["interact_edit_flag"]] = false
 		interactible.open()
+		Flags.is_manor_gate_open = true
 		return

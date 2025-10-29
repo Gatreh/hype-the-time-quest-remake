@@ -21,10 +21,11 @@ Helper="*res://globals/helper.gd"
 Inventory="*res://globals/inventory.gd"
 Flags="*res://globals/flags.gd"
 Stats="*res://globals/stats.gd"
+Manager="*res://data/manager.gd"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/kanban_tasks/plugin.cfg", "res://addons/ridiculous_coding/plugin.cfg")
+enabled=PackedStringArray("res://addons/ridiculous_coding/plugin.cfg")
 
 [file_customization]
 

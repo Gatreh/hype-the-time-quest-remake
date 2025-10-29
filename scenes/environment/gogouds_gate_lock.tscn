@@ -9,7 +9,7 @@ size = Vector2(0.3, 0.5)
 albedo_color = Color(0.76883984, 0.76450443, 1.1551381e-06, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mi6dp"]
-size = Vector3(1, 1, 0.8432617)
+size = Vector3(0.663147, 1, 0.8190918)
 
 [node name="GogoudsGateLock" type="Area3D"]
 script = ExtResource("1_mi6dp")
@@ -20,5 +20,5 @@ mesh = SubResource("PlaneMesh_yvxw1")
 surface_material_override/0 = SubResource("StandardMaterial3D_c8yx6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.46416932)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08047485, 0, 0.47625428)
 shape = SubResource("BoxShape3D_mi6dp")

@@ -4,7 +4,8 @@ enum ItemTypes {
 	GREEN_GRASS,
 	BLUE_BOLT,
 	OAK_NUT,
-	POTION
+	POTION,
+	MANOR_GATE_KEY,
 }
 
 @export var name : String

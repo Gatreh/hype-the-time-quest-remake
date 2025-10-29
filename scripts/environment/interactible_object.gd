@@ -33,13 +33,19 @@ func _physics_process(_delta) -> void:
 ## Iterates through a dictionary of flags to check if the required flags are set
 ## for the interaction to happen.
 # Might refactor this to have the ability to do a certain amount of checks.
-func _check_requirements(requirements : Dictionary) -> bool:
+func _check_requirements(requirements : Variant) -> bool:
 	print("Checking requirements")
-	for key in requirements:
-		print(key + ": " + str(requirements[key]))
-		if not requirements[key]:
-			print("ACCESS DENIED")
-			return false
+	if requirements is Array:
+		for requirement in requirements:
+			if not requirement:
+				print("ACCESS DENIED")
+				return false
+	elif requirements is Dictionary:
+		for key in requirements:
+			print(key + ": " + str(requirements[key]))
+			if not requirements[key]:
+				print("ACCESS DENIED")
+				return false
 	print("ACCESS GRANTED")
 	return true
 

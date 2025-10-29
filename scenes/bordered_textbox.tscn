@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://b8wensbfjhcp5" path="res://scripts/bordered_textbox.gd" id="2_dh72l"]
 
 [node name="BorderedTextbox" type="NinePatchRect"]
-offset_right = 382.0
-offset_bottom = 126.0
+offset_right = 297.0
+offset_bottom = 138.0
 texture = ExtResource("1_2x832")
 region_rect = Rect2(0, 0, 48, 48)
 patch_margin_left = 16
@@ -27,4 +27,4 @@ offset_right = -16.0
 offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 2
-autowrap_mode = 1
+autowrap_mode = 2
