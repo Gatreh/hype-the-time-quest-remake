@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dx46ce6nr3q4l"]
+[gd_scene load_steps=9 format=3 uid="uid://dx46ce6nr3q4l"]
 
 [ext_resource type="PackedScene" uid="uid://dulsyswsfhluu" path="res://scenes/entities/player_character.tscn" id="1_25qoj"]
 [ext_resource type="PackedScene" uid="uid://b08hc23prf28h" path="res://scenes/environment/gogouds_gate.tscn" id="2_p1ar4"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dgmwu8ugkpul0" path="res://scenes/entities/blue_bolt.tscn" id="4_f5ud3"]
 [ext_resource type="PackedScene" uid="uid://ctsl6pb4jpucg" path="res://scenes/environment/target_dummy.tscn" id="5_ortva"]
 [ext_resource type="PackedScene" uid="uid://cb68ooqljvvi5" path="res://scenes/entities/gogoud.tscn" id="6_p1ar4"]
+[ext_resource type="PackedScene" uid="uid://dpek284fcvl8g" path="res://assets/sundial3.blend" id="7_u0jy4"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_w3snd"]
 
@@ -104,7 +105,7 @@ use_collision = true
 size = Vector3(2.3125, 1.5897217, 1.5092773)
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("1_25qoj")]
-transform = Transform3D(0.999424, 0, 0, 0, 0.999424, 0, 0, 0, 0.999424, 0, 0, 8.423354)
+transform = Transform3D(0.999424, 0, 0, 0, 0.999424, 0, 0, 0, 0.999424, 26.418936, 6.1123447, 1.8456202)
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="."]
 transform = Transform3D(18.6004, 8.10606, 0, -8.5765, 17.5803, 0, 0, 0, 3.44446, 12.9855, 0.249415, -10.6356945)
@@ -140,3 +141,8 @@ move_location = [NodePath("../Marker3D")]
 
 [node name="Marker3D" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.41704, -2.9057193, 51.822433)
+
+[node name="sundial3" parent="." instance=ExtResource("7_u0jy4")]
+transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 26.092693, 6.002337, -1.1542363)
+
+[editable path="sundial3"]

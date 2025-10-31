@@ -2,7 +2,7 @@
 
 @export var item : Item
 
-@abstract func restore(float, Node3D)
+@abstract func restore(amount: float, player : Node3D)
 @abstract func add_mesh()
 
 func _ready() -> void:

@@ -28,8 +28,7 @@ func start(player : Node3D) -> void:
 	new_box.label_text = npc_dialogue
 	new_box.size = Vector2(300, 100)
 	var screen_size = DisplayServer.window_get_size()
-	new_box.position = Vector2(screen_size.x - (new_box.size.x + MARGIN), \
-								MARGIN)
+	new_box.position = Vector2(screen_size.x - (new_box.size.x + MARGIN), MARGIN)
 	
 	quest_taker.add_child(new_box)
 

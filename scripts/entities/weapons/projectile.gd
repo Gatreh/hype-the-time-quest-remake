@@ -13,7 +13,6 @@ func _physics_process(delta) -> void:
 	var motion := -transform.basis.z * distance
 	
 	position += motion
-	
 	_traveled_distance += distance
 	if _traveled_distance > max_range:
 		queue_free()

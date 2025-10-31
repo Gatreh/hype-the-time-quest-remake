@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxrntbqpifml6"]
+
+[ext_resource type="PackedScene" uid="uid://dpek284fcvl8g" path="res://assets/sundial3.blend" id="1_gn18h"]
+
+[node name="sundial3" instance=ExtResource("1_gn18h")]

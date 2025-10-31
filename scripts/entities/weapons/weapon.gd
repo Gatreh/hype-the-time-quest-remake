@@ -21,7 +21,11 @@ var state := SHEATHED : set = _set_state
 func attack() -> void:
 	state = ATTACK
 	var projectile : Projectile = projectile_scene.instantiate()
-	add_child(projectile)
+	
+	projectile.global_transform = get_parent().global_transform
+	projectile.transform.origin.y += state_positions[ATTACK].y
+	
+	get_tree().root.add_child(projectile)
 
 
 func draw() -> void:

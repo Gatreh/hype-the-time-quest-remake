@@ -1,6 +1,6 @@
 # Hype the Time Quest remake
 
-This is a project to recreate the mechanics of hype the time quest with the possibility for the Hype the Time Quest community over at the [discord](https://discord.gg/PGqVJTP)) to help out with other details of the game. This project aims to initially be a faithful recreation of the original game that will let us more easily play it on modern hardware instead of having to jump through hoops or emulating it.
+This is a project to recreate the mechanics of hype the time quest with the possibility for the Hype the Time Quest community over at the [discord](https://discord.gg/PGqVJTP) to help out with other details of the game. This project aims to initially be a faithful recreation of the original game that will let us more easily play it on modern hardware instead of having to jump through hoops or emulating it.
 
 Down the line I personally would love to create an upgraded version with modernised graphics, modding support, level streaming and other features I think could be cool. But that is not in the initial scope of the project.
 
