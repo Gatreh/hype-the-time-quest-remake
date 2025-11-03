@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b08hc23prf28h"]
 
-[ext_resource type="Script" uid="uid://dwlep038h362v" path="res://scripts/environment/gogouds_gate.gd" id="1_1ot6q"]
+[ext_resource type="Script" uid="uid://dwlep038h362v" path="res://scripts/environment/manor_gate.gd" id="1_1ot6q"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_cw672"]
 size = Vector2(3, 3)

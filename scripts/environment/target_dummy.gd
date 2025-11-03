@@ -45,7 +45,7 @@ func _on_left_area_entered(area : Area3D) -> void:
 	spun_left = true
 	if spun_left and spun_right:
 		Flags.tutorial_quest.quest_status = Quest.QuestStatus.REACHED_GOAL
-		Flags.tutorial_quest.finish()
+		print(Flags.tutorial_quest.quest_status)
 	area.queue_free()
 
 
@@ -54,5 +54,5 @@ func _on_right_area_entered(area : Area3D) -> void:
 	spun_right = true
 	if spun_left and spun_right:
 		Flags.tutorial_quest.quest_status = Quest.QuestStatus.REACHED_GOAL
-		Flags.tutorial_quest.reward()
+		print(Flags.tutorial_quest.quest_status)
 	area.queue_free()

@@ -11,9 +11,15 @@ enum QuestStatus {
 }
 
 @export var quest_id: String
+## What are the lines of dialogue that should appear in each text box that is displayed?
 @export var npc_dialogue : Array[String]
 @export var quest_status : QuestStatus = QuestStatus.AVAILABLE
-@export var quest_rewards : Item
+## Not implemented yet
+@export var auto_start : bool = false
+## What items do you want to give the player when they finish this quest?
+@export var item_rewards : Array[Item]
+## What quests should become available once this quest finishes?
+@export var quest_unlocks : Array[Quest]
 
 var textbox_scene : PackedScene = preload("uid://04mxchow3dkj")
 var quest_taker : Player
@@ -48,5 +54,10 @@ func reached_goal() -> bool:
 		return false
 
 func _give_rewards() -> void:
-	if quest_rewards is Item:
-		Inventory.items = quest_rewards
+	if item_rewards.size() > 0:
+		for item in item_rewards:
+			# create an add_item function to the inventory
+			Inventory.items = item
+	if quest_unlocks.size() > 0:
+		for quest in quest_unlocks:
+			quest.quest_status = Quest.QuestStatus.AVAILABLE

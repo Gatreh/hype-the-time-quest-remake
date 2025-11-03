@@ -4,4 +4,4 @@ extends Node
 
 const TEST_QUEST = preload("uid://dbq5cxhcbwe5y")
 
-var reward := Inventory.gogouds_manor_gate_key
+var reward := Inventory.manor_gate_key

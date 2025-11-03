@@ -4,7 +4,7 @@ enum ItemTypes {
 	GREEN_GRASS,
 	BLUE_BOLT,
 	OAK_NUT,
-	POTION,
+	BLUE_POTION,
 	MANOR_GATE_KEY,
 }
 

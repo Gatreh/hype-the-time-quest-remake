@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cb68ooqljvvi5"]
 
-[ext_resource type="Script" uid="uid://cx43xi5slxt4l" path="res://scripts/entities/gogoud.gd" id="1_epksx"]
+[ext_resource type="Script" uid="uid://cx43xi5slxt4l" path="res://scripts/entities/wizard_1.gd" id="1_epksx"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_3cn0l"]
 height = 1.75

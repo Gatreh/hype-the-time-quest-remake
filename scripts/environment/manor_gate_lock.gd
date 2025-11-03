@@ -3,7 +3,7 @@ extends InteractibleObject
 
 func _interact() -> void:
 	var requirements = [
-		Inventory.gogouds_manor_gate_key,
+		Inventory.manor_gate_key,
 		Inventory.is_gate_key_equipped,
 		!Flags.is_manor_gate_open,
 	]

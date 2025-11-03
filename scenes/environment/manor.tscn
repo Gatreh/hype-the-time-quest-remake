@@ -1,16 +1,16 @@
 [gd_scene load_steps=9 format=3 uid="uid://dx46ce6nr3q4l"]
 
-[ext_resource type="PackedScene" uid="uid://dulsyswsfhluu" path="res://scenes/entities/player_character.tscn" id="1_25qoj"]
-[ext_resource type="PackedScene" uid="uid://b08hc23prf28h" path="res://scenes/environment/gogouds_gate.tscn" id="2_p1ar4"]
-[ext_resource type="PackedScene" uid="uid://53418pva6xbl" path="res://scenes/environment/gogouds_gate_lock.tscn" id="3_u0jy4"]
-[ext_resource type="PackedScene" uid="uid://dgmwu8ugkpul0" path="res://scenes/entities/blue_bolt.tscn" id="4_f5ud3"]
-[ext_resource type="PackedScene" uid="uid://ctsl6pb4jpucg" path="res://scenes/environment/target_dummy.tscn" id="5_ortva"]
-[ext_resource type="PackedScene" uid="uid://cb68ooqljvvi5" path="res://scenes/entities/gogoud.tscn" id="6_p1ar4"]
-[ext_resource type="PackedScene" uid="uid://dpek284fcvl8g" path="res://assets/sundial3.blend" id="7_u0jy4"]
+[ext_resource type="PackedScene" uid="uid://dulsyswsfhluu" path="res://scenes/entities/player_character.tscn" id="1_axfpv"]
+[ext_resource type="PackedScene" uid="uid://b08hc23prf28h" path="res://scenes/environment/manor_gate.tscn" id="2_7vemi"]
+[ext_resource type="PackedScene" uid="uid://53418pva6xbl" path="res://scenes/environment/manor_gate_lock.tscn" id="3_b0cqe"]
+[ext_resource type="PackedScene" uid="uid://dgmwu8ugkpul0" path="res://scenes/entities/blue_bolt.tscn" id="4_ms8xy"]
+[ext_resource type="PackedScene" uid="uid://ctsl6pb4jpucg" path="res://scenes/environment/target_dummy.tscn" id="5_rc3ks"]
+[ext_resource type="PackedScene" uid="uid://cb68ooqljvvi5" path="res://scenes/entities/wizard_1.tscn" id="6_02wtp"]
+[ext_resource type="PackedScene" uid="uid://dpek284fcvl8g" path="res://assets/sundial3.blend" id="7_n2yk2"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_w3snd"]
 
-[node name="GogoudsManor" type="Node3D"]
+[node name="TestLevel1" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.8015522, -0.4232451, 0.42234814, 0.42554283, 0.09239725, 0.9002089, -0.42003274, 0.90129155, 0.106047675, 0, 0, 0)
@@ -104,7 +104,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26124287, 0.65946436, 13.1
 use_collision = true
 size = Vector3(2.3125, 1.5897217, 1.5092773)
 
-[node name="PlayerCharacter" parent="." instance=ExtResource("1_25qoj")]
+[node name="PlayerCharacter" parent="." instance=ExtResource("1_axfpv")]
 transform = Transform3D(0.999424, 0, 0, 0, 0.999424, 0, 0, 0, 0.999424, -1.94, 0, 1.846)
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="."]
@@ -112,37 +112,37 @@ transform = Transform3D(18.6004, 8.10606, 0, -8.5765, 17.5803, 0, 0, 0, 3.44446,
 use_collision = true
 mesh = SubResource("PrismMesh_w3snd")
 
-[node name="GogoudsGate" parent="." instance=ExtResource("2_p1ar4")]
+[node name="ManorGate" parent="." instance=ExtResource("2_7vemi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.527283, -2.9355159, 55.40542)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="GogoudsGate"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="ManorGate"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9937029, 1.75, -0.5045128)
 use_collision = true
 size = Vector3(1, 3.5, 1)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="GogoudsGate"]
+[node name="CSGBox3D3" type="CSGBox3D" parent="ManorGate"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0062969, 1.75, -0.5045128)
 use_collision = true
 size = Vector3(1, 3.5, 1)
 
-[node name="GogoudsGateLock" parent="." node_paths=PackedStringArray("interactible") instance=ExtResource("3_u0jy4")]
+[node name="ManorGateLock" parent="." node_paths=PackedStringArray("interactible") instance=ExtResource("3_b0cqe")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.516993, -1.654855, 54.39709)
-interactible = NodePath("../GogoudsGate")
+interactible = NodePath("../ManorGate")
 
-[node name="BlueBolt" parent="." instance=ExtResource("4_f5ud3")]
+[node name="BlueBolt" parent="." instance=ExtResource("4_ms8xy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9337435, 0, 6.7662582)
 
-[node name="TargetDummy" parent="." instance=ExtResource("5_ortva")]
+[node name="TargetDummy" parent="." instance=ExtResource("5_rc3ks")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6.576822, 0.05000019, 0.26875925)
 
-[node name="Gogoud" parent="." node_paths=PackedStringArray("move_location") instance=ExtResource("6_p1ar4")]
+[node name="Wizard1" parent="." node_paths=PackedStringArray("move_location") instance=ExtResource("6_02wtp")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -6.011266, -0.003793478, 4.1255083)
 move_location = [NodePath("../Marker3D")]
 
 [node name="Marker3D" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.41704, -2.9057193, 51.822433)
 
-[node name="sundial3" parent="." instance=ExtResource("7_u0jy4")]
+[node name="sundial3" parent="." instance=ExtResource("7_n2yk2")]
 transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 26.092693, 6.002337, -1.1542363)
 
 [editable path="sundial3"]

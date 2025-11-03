@@ -3,7 +3,7 @@ extends CharacterBody3D
 @export var move_location : Array[Marker3D]
 
 var character : Player
-var quest_references : Array = [Flags.tutorial_quest]
+var quest_references : Array[Quest] = [Flags.tutorial_quest]
 
 var no_new_quest : String = "bye have a nice trip"
 var standard_reply : String = "go do the thing I told you to do first"
@@ -37,6 +37,19 @@ func _physics_process(_delta: float) -> void:
 					$InteractRange.monitoring = true
 				)
 				add_child(textbox)
+			
+			elif quest.quest_status == quest.QuestStatus.REACHED_GOAL:
+				var textbox : BorderedTextbox = preload("res://scenes/bordered_textbox.tscn").instantiate()
+				var array : Array[String]
+				array.append("Great job sir knight here's the key to my manor.") 
+				textbox.setup(character, array)
+				$InteractRange.monitoring = false
+				textbox.text_sequence_finished.connect(func():
+					quest.finish()
+					$InteractRange.monitoring = true
+				)
+				add_child(textbox)
+				
 				
 
 		# lock players movement
