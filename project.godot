@@ -23,10 +23,6 @@ Flags="*res://globals/flags.gd"
 Stats="*res://globals/stats.gd"
 Manager="*res://data/manager.gd"
 
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/ridiculous_coding/plugin.cfg")
-
 [file_customization]
 
 folder_colors={

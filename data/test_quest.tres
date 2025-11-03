@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="QuestManager" load_steps=3 format=3 uid="uid://dbq5cxhcbwe5y"]
+[gd_resource type="Resource" script_class="Quest" load_steps=3 format=3 uid="uid://dbq5cxhcbwe5y"]
 
 [ext_resource type="Script" uid="uid://dc3n4sk6l50xv" path="res://data/quest.gd" id="1_3s0d5"]
 [ext_resource type="Resource" uid="uid://1t6eeh26k6qd" path="res://data/manor_key.tres" id="2_tbo6j"]
 
 [resource]
 script = ExtResource("1_3s0d5")
-npc_dialogue = "sup just attack the training dummy or something"
+npc_dialogue = Array[String](["Press Tag to go into combat mode and press Down arrow to attack.", "Attack the training dummy on each side and I'll give you a key to my gateto "])
 quest_rewards = ExtResource("2_tbo6j")
 metadata/_custom_type_script = "uid://dc3n4sk6l50xv"

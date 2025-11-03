@@ -22,6 +22,22 @@ func _physics_process(_delta: float) -> void:
 		for quest in quest_references:
 			if quest.quest_status == quest.QuestStatus.AVAILABLE:
 				quest.start(character)
+				$InteractRange.monitoring = false
+				quest.interaction_ready.connect(func():
+					$InteractRange.monitoring = true
+				)
+				
+			elif quest.quest_status == quest.QuestStatus.STARTED:
+				var textbox : BorderedTextbox = preload("res://scenes/bordered_textbox.tscn").instantiate()
+				var array : Array[String]
+				array.append(standard_reply) 
+				textbox.setup(character, array)
+				$InteractRange.monitoring = false
+				textbox.text_sequence_finished.connect(func():
+					$InteractRange.monitoring = true
+				)
+				add_child(textbox)
+				
 
 		# lock players movement
 		# Check if there is any active quest stage, if it is then check if the

@@ -6,6 +6,7 @@
 [node name="BorderedTextbox" type="NinePatchRect"]
 offset_right = 297.0
 offset_bottom = 138.0
+scale = Vector2(2, 2)
 texture = ExtResource("1_2x832")
 region_rect = Rect2(0, 0, 48, 48)
 patch_margin_left = 16
@@ -15,16 +16,3 @@ patch_margin_bottom = 16
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 script = ExtResource("2_dh72l")
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 16.0
-offset_top = 16.0
-offset_right = -16.0
-offset_bottom = -16.0
-grow_horizontal = 2
-grow_vertical = 2
-autowrap_mode = 2
