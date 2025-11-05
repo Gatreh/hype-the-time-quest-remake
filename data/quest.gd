@@ -62,3 +62,6 @@ func _give_rewards() -> void:
 	if quest_unlocks.size() > 0:
 		for quest in quest_unlocks:
 			quest.quest_status = Quest.QuestStatus.AVAILABLE
+			if auto_start:
+				quest.quest_status = Quest.QuestStatus.STARTED
+				quest.start(quest_taker)

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Quest" load_steps=4 format=3 uid="uid://deopmkssyen7a"]
+
+[ext_resource type="Script" uid="uid://dpexnh30faksn" path="res://data/item.gd" id="1_ekksi"]
+[ext_resource type="Script" uid="uid://dc3n4sk6l50xv" path="res://data/quest.gd" id="2_4vave"]
+
+[sub_resource type="Resource" id="Resource_ekksi"]
+script = ExtResource("1_ekksi")
+type = 4
+metadata/_custom_type_script = "uid://dpexnh30faksn"
+
+[resource]
+script = ExtResource("2_4vave")
+quest_id = "TQ2"
+npc_dialogue = Array[String](["Great job, Now attack the second  training dummy", "And I'll give you something nice"])
+quest_status = 0
+auto_start = true
+item_rewards = Array[ExtResource("1_ekksi")]([SubResource("Resource_ekksi")])
+metadata/_custom_type_script = "uid://dc3n4sk6l50xv"

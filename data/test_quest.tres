@@ -2,14 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dc3n4sk6l50xv" path="res://data/quest.gd" id="1_3s0d5"]
 [ext_resource type="Script" uid="uid://dpexnh30faksn" path="res://data/item.gd" id="1_tbo6j"]
-
-[sub_resource type="Resource" id="Resource_tbo6j"]
-script = ExtResource("1_tbo6j")
-type = 4
-metadata/_custom_type_script = "uid://dpexnh30faksn"
+[ext_resource type="Resource" uid="uid://deopmkssyen7a" path="res://data/test_quest_2.tres" id="3_vrnyk"]
 
 [resource]
 script = ExtResource("1_3s0d5")
-npc_dialogue = Array[String](["Press Tag to go into combat mode and press Down arrow to attack.", "Attack the training dummy on each side and I'll give you a key to my gate."])
-item_rewards = Array[ExtResource("1_tbo6j")]([SubResource("Resource_tbo6j")])
+npc_dialogue = Array[String](["Press Tab to go into combat mode and press Down arrow to attack.", "Attack the training dummy on each side and I'll give you a key to my gate."])
+quest_unlocks = Array[ExtResource("1_3s0d5")]([ExtResource("3_vrnyk")])
 metadata/_custom_type_script = "uid://dc3n4sk6l50xv"

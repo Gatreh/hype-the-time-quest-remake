@@ -3,7 +3,7 @@ extends CharacterBody3D
 @export var move_location : Array[Marker3D]
 
 var character : Player
-var quest_references : Array[Quest] = [Flags.tutorial_quest]
+@export var quest_references : Array[Quest]
 
 var no_new_quest : String = "bye have a nice trip"
 var standard_reply : String = "go do the thing I told you to do first"

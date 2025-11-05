@@ -5,6 +5,8 @@ enum SpinDirection {
 	LEFT,
 }
 
+@export var quest : Quest
+
 var left_area_hit : bool = false
 var right_area_hit : bool = false
 
@@ -41,14 +43,14 @@ func spin(direction : SpinDirection) -> void:
 # right now, alternatively get more queststages that it will be able to set.
 # based on an export.
 func set_flag(target : Area3D) -> void:
-	if Flags.tutorial_quest.quest_status == Quest.QuestStatus.STARTED:
+	if quest.quest_status == Quest.QuestStatus.STARTED:
 		if target == %RightTarget:
 			right_area_hit = true
 		else:
 			left_area_hit = true
 	
 	if right_area_hit and left_area_hit:
-		Flags.tutorial_quest.quest_status = Quest.QuestStatus.REACHED_GOAL
+		quest.quest_status = Quest.QuestStatus.REACHED_GOAL
 
 
 func spin_in_direction(area_entered : Area3D, target : Area3D, target_basis) -> void:
@@ -59,8 +61,8 @@ func spin_in_direction(area_entered : Area3D, target : Area3D, target_basis) -> 
 	var is_right_target = target == %RightTarget
 	var is_in_front = relative_vector.dot(target_basis) > 0
 	
-	var spin_direction = SpinDirection.LEFT if Helper.xor(is_in_front, is_right_target) \
-											else SpinDirection.RIGHT
+	var spin_direction = SpinDirection.RIGHT if Helper.xor(is_right_target, is_in_front) \
+											else SpinDirection.LEFT
 	
 	spin(spin_direction)
 
@@ -68,12 +70,12 @@ func spin_in_direction(area_entered : Area3D, target : Area3D, target_basis) -> 
 func _on_left_area_entered(area : Area3D) -> void:
 	if spinning:
 		return
-	spin_in_direction(area, %LeftTarget, Vector3(-1,0,0))
+	spin_in_direction(area, %LeftTarget, Vector3(1,0,0))
 	set_flag(%LeftTarget)
 
 
 func _on_right_area_entered(area : Area3D) -> void:
 	if spinning:
 		return
-	spin_in_direction(area, %RightTarget, Vector3(-1,0,0))
+	spin_in_direction(area, %RightTarget, Vector3(1,0,0))
 	set_flag(%RightTarget)

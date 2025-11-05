@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dx46ce6nr3q4l"]
+[gd_scene load_steps=12 format=3 uid="uid://dx46ce6nr3q4l"]
 
 [ext_resource type="PackedScene" uid="uid://dulsyswsfhluu" path="res://scenes/entities/player_character.tscn" id="1_axfpv"]
 [ext_resource type="PackedScene" uid="uid://b08hc23prf28h" path="res://scenes/environment/manor_gate.tscn" id="2_7vemi"]
@@ -6,7 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://dgmwu8ugkpul0" path="res://scenes/entities/blue_bolt.tscn" id="4_ms8xy"]
 [ext_resource type="PackedScene" uid="uid://ctsl6pb4jpucg" path="res://scenes/environment/target_dummy.tscn" id="5_rc3ks"]
 [ext_resource type="PackedScene" uid="uid://cb68ooqljvvi5" path="res://scenes/entities/wizard_1.tscn" id="6_02wtp"]
+[ext_resource type="Resource" uid="uid://dbq5cxhcbwe5y" path="res://data/test_quest.tres" id="6_b0cqe"]
+[ext_resource type="Resource" uid="uid://deopmkssyen7a" path="res://data/test_quest_2.tres" id="7_ms8xy"]
 [ext_resource type="PackedScene" uid="uid://dpek284fcvl8g" path="res://assets/sundial3.blend" id="7_n2yk2"]
+[ext_resource type="Script" uid="uid://dc3n4sk6l50xv" path="res://data/quest.gd" id="8_ms8xy"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_w3snd"]
 
@@ -134,10 +137,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9337435, 0, 6.7662582)
 
 [node name="TargetDummy" parent="." instance=ExtResource("5_rc3ks")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6.576822, 0.05000019, 0.26875925)
+quest = ExtResource("6_b0cqe")
+
+[node name="TargetDummy2" parent="." instance=ExtResource("5_rc3ks")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6.576822, 0.05000019, 6.8813353)
+quest = ExtResource("7_ms8xy")
 
 [node name="Wizard1" parent="." node_paths=PackedStringArray("move_location") instance=ExtResource("6_02wtp")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -6.011266, -0.003793478, 4.1255083)
 move_location = [NodePath("../Marker3D")]
+quest_references = Array[ExtResource("8_ms8xy")]([ExtResource("6_b0cqe"), ExtResource("7_ms8xy")])
 
 [node name="Marker3D" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.41704, -2.9057193, 51.822433)
