@@ -15,7 +15,7 @@ bottom_radius = 0.35
 height = 0.001
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_kh7ch"]
-height = 0.001
+height = 0.2
 radius = 0.35
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_hn1pl"]
@@ -50,7 +50,7 @@ skeleton = NodePath("../..")
 [node name="LeftTarget" type="Area3D" parent="Arms/LeftTargetMesh"]
 unique_name_in_owner = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Arms/LeftTargetMesh/LeftTarget"]
+[node name="LeftTarget" type="CollisionShape3D" parent="Arms/LeftTargetMesh/LeftTarget"]
 shape = SubResource("CylinderShape3D_kh7ch")
 
 [node name="RightTargetMesh" type="MeshInstance3D" parent="Arms"]

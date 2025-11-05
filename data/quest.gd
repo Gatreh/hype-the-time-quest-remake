@@ -53,6 +53,7 @@ func reached_goal() -> bool:
 	else:
 		return false
 
+
 func _give_rewards() -> void:
 	if item_rewards.size() > 0:
 		for item in item_rewards:
