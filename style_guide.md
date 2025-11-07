@@ -4,7 +4,7 @@
 3. @static_unload
 4. class_name
 5. extends
-6. ## main documentation comment
+6. \## main documentation comment
 
 7. signals
 8. enums
